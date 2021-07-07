@@ -321,7 +321,7 @@ def rmchatpic(bot: Bot, update: Update):
 
 
 @run_async
-def adminlist(bot: Bot, update: Update):
+def staff(bot: Bot, update: Update):
     administrators = update.effective_chat.get_administrators()
     msg = update.effective_message
     text = "Admins in *{}*:".format(update.effective_chat.title or "this chat")
@@ -357,7 +357,7 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- - /adminlist: list of admins in the chat
+ - /staff: list of admins in the chat
 
 *Admin only:*
  - /pin: silently pins the message replied to - add 'loud' or 'notify' to give notifs to users.
@@ -389,7 +389,7 @@ DEL_CHAT_PIC_HANDLER = CommandHandler("delgpic", rmchatpic, filters=Filters.grou
 
 
 
-ADMINLIST_HANDLER = DisableAbleCommandHandler("adminlist", adminlist, filters=Filters.group)
+ADMINLIST_HANDLER = DisableAbleCommandHandler("staff", staff, filters=Filters.group)
 
 dispatcher.add_handler(PIN_HANDLER)
 dispatcher.add_handler(UNPIN_HANDLER)
@@ -403,7 +403,7 @@ dispatcher.add_handler(ADMINLIST_HANDLER)
 
 __mod_name__ = "ADMIN"
 
-__command_list__ = ["adminlist", "admins", "invitelink"]
+__command_list__ = ["staff", "admins", "invitelink"]
 
 __handlers__ = [ADMINLIST_HANDLER, PIN_HANDLER, UNPIN_HANDLER,
                 INVITE_HANDLER, PROMOTE_HANDLER, DEMOTE_HANDLER, SET_TITLE_HANDLER, CHAT_PIC_HANDLER, DEL_CHAT_PIC_HANDLER]
