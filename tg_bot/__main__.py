@@ -27,7 +27,11 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 **halo {}, saya adalah bot yang bernama {}!** 
+saya di buat dan di kelola oleh [lunglung](t.me/alunngg)
+
 saya adalah **SUPER**  group management bot.
+saya dapat pengusir, mengkick dan ban para penyebar tmo ngentod meresahkan masyarakat telegram
+
 bagaimana cara menggunakan nya❓
 tekan tombol /help untuk mengetahui daftar lengkap perintah bot!
 
@@ -35,12 +39,13 @@ tekan tombol /help untuk mengetahui daftar lengkap perintah bot!
 
 HELP_STRINGS = """
 
-Sadboi userbot ni bosh *{}*.
+Halo saya adalah super manage group yang bernama *{}*. yang di buat oleh @alunngg
+Saya bisa melakukan beberapa hal seperti dibawah ini
 
 *Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
+ - /start: untuk memulai bot
+ - /help: cara menggunakan bot
+ - /help <module name>: cara menggunakan plugins yang tersedia
  - /settings:
    - in PM: will send you your settings for all supported modules.
    - in a group: will redirect you to pm, with all that chat's settings.
@@ -144,7 +149,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                        callback_data="help_back".format(bot.username)),
                                                                                    InlineKeyboardButton(text="OWNER",
                                                                        url="t.me/alunngg")],
-                                                                                   [InlineKeyboardButton(text="tambahkan saya ke grup anda",
+                                                                                   [InlineKeyboardButton(text="add me",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="Groups",
                                                                        url="https://t.me/SenseiAsik")
