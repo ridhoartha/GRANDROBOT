@@ -14,7 +14,7 @@ from tg_bot.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
-def runs(bot: Bot, update: Update):
+def war(bot: Bot, update: Update):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
 
 
@@ -120,18 +120,10 @@ def table(bot: Bot, update: Update):
 
 
 __help__ = """
- - /runs: reply a random string from an array of replies.
- - /slap: slap a user, or get slapped if not a reply.
- - /shrug : get shrug XD.
- - /table : get flip/unflip :v.
- - /decide : Randomly answers yes/no/maybe
- - /toss : Tosses A coin
- - /bluetext : check urself :V
- - /roll : Roll a dice.
- - /rlg : Join ears,nose,mouth and create an emo ;-;
+ - /war: plugins ini di buat untuk kasih paham para jamet jamet tele.
 """
 
-RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
+RUNS_HANDLER = DisableAbleCommandHandler("war", war)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
