@@ -114,13 +114,14 @@ def decide(bot: Bot, update: Update):
     reply_text(random.choice(fun_strings.DECIDE))
 
 @run_async
-def table(bot: Bot, update: Update):
+def gay(bot: Bot, update: Update):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.TABLE))
 
 
 __help__ = """
  - /war: plugins ini di buat untuk kasih paham para jamet jamet tele.
+ - /gay: buat cek persentase lu gay apa ngga
 """
 
 RUNS_HANDLER = DisableAbleCommandHandler("war", war)
@@ -131,7 +132,7 @@ SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
-TABLE_HANDLER = DisableAbleCommandHandler("table", table)
+TABLE_HANDLER = DisableAbleCommandHandler("gay", gay)
 
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
